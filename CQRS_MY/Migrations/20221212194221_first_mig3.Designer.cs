@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CQRS_MY.Migrations
 {
     [DbContext(typeof(ProductContext))]
-    [Migration("20221212192643_first_mig")]
-    partial class first_mig
+    [Migration("20221212194221_first_mig3")]
+    partial class first_mig3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

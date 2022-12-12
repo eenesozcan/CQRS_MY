@@ -7,7 +7,7 @@ namespace CQRS_MY.DAL.Context
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=DESKTOP-07T8MF2\\DESKTOP-CSTSJL1\\MSSQLSERVER2019;initial catalog=ZCQRSDb;integrated security=true");
+            optionsBuilder.UseSqlServer("server=DESKTOP-CSTSJL1\\MSSQLSERVER2019;initial catalog=ZCQRSDb;integrated security=true");
         }
 
 
@@ -17,3 +17,5 @@ namespace CQRS_MY.DAL.Context
         
     }
 }
+
+

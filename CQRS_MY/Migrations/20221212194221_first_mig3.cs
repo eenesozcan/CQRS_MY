@@ -2,7 +2,7 @@
 
 namespace CQRS_MY.Migrations
 {
-    public partial class first_mig : Migration
+    public partial class first_mig3 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

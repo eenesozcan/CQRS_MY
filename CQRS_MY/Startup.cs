@@ -1,3 +1,5 @@
+using CQRS_MY.CQRS.Handlers.ProductHandlers;
+using CQRS_MY.DAL.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +25,12 @@ namespace CQRS_MY
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ProductContext>();
+            services.AddScoped<GetProductQueryHandler>();
+            services.AddScoped<GetProductQueryHandler2>();
+
+
+
             services.AddControllersWithViews();
         }
 
