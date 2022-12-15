@@ -13,6 +13,7 @@ namespace CQRS_MY.DAL.Context
 
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Student> Students { get; set; }
 
         
     }

@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <Folder Include="CQRS\Commands\ProductCommands\" />
-    <Folder Include="CQRS\Commands\" />
     <Folder Include="CQRS\Queries\Product Queries\" />
   </ItemGroup>
 

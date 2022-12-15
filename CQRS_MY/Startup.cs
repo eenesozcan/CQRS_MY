@@ -1,4 +1,5 @@
 using CQRS_MY.CQRS.Handlers.ProductHandlers;
+using CQRS_MY.CQRS.Handlers.StudentHandlers;
 using CQRS_MY.DAL.Context;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,6 +29,10 @@ namespace CQRS_MY
             services.AddDbContext<ProductContext>();
             services.AddScoped<GetProductQueryHandler>();
             services.AddScoped<GetProductQueryHandler2>();
+            services.AddScoped<GetStudentQueryHandler>();
+            services.AddScoped<CreateStudentCommandHandler>();
+            services.AddScoped<GetStudentByIDQueryHandler>();
+            services.AddScoped<RemoveStudentCommandHandler>();
 
 
 
