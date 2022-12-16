@@ -11,14 +11,16 @@ namespace CQRS_MY.Controllers
         private readonly CreateStudentCommandHandler _createStudentCommandHandler;
         private readonly GetStudentByIDQueryHandler _studentByIDQueryHandler;
         private readonly RemoveStudentCommandHandler _removeStudentCommandHandler;
+        private readonly UpdateStudentCommandHandler _updateStudentCommandHandler;
 
 
-        public StudentController(GetStudentQueryHandler studentQueryHandler, CreateStudentCommandHandler createStudentCommandHandler, GetStudentByIDQueryHandler studentByIDQueryHandler, RemoveStudentCommandHandler removeStudentCommandHandler)
+        public StudentController(GetStudentQueryHandler studentQueryHandler, CreateStudentCommandHandler createStudentCommandHandler, GetStudentByIDQueryHandler studentByIDQueryHandler, RemoveStudentCommandHandler removeStudentCommandHandler, UpdateStudentCommandHandler updateStudentCommandHandler)
         {
             _studentQueryHandler = studentQueryHandler;
             _createStudentCommandHandler = createStudentCommandHandler;
             _studentByIDQueryHandler = studentByIDQueryHandler;
             _removeStudentCommandHandler = removeStudentCommandHandler;
+            _updateStudentCommandHandler = updateStudentCommandHandler;
         }
 
         public IActionResult Index()
@@ -40,11 +42,19 @@ namespace CQRS_MY.Controllers
             return RedirectToAction("Index");
         }
 
-
+        [HttpGet]
         public IActionResult GetStudent(int id)
         {
             var values = _studentByIDQueryHandler.Handle(id);
             return View(values);
+
+        }
+
+        [HttpPost]
+        public IActionResult GetStudent(UpdateStudentCommand command)
+        {
+            _updateStudentCommandHandler.Handle(command);
+            return RedirectToAction("Index");
 
         }
 

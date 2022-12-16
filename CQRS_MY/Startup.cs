@@ -1,6 +1,7 @@
 using CQRS_MY.CQRS.Handlers.ProductHandlers;
 using CQRS_MY.CQRS.Handlers.StudentHandlers;
 using CQRS_MY.DAL.Context;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +34,11 @@ namespace CQRS_MY
             services.AddScoped<CreateStudentCommandHandler>();
             services.AddScoped<GetStudentByIDQueryHandler>();
             services.AddScoped<RemoveStudentCommandHandler>();
+            services.AddScoped<UpdateStudentCommandHandler>();
+
+
+
+            services.AddMediatR(typeof(Startup));
 
 
 
